@@ -54,3 +54,21 @@ This guide provides step-by-step instructions for running the Swahili ARC evalua
     ```
 
 Follow these steps to set up and run the Swahili ARC evaluation.
+
+#run vllm
+```python 
+import os
+import subprocess
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+
+model_name = "model_output/gemma2b"
+
+command = (
+    "lm_eval --model vllm --model_args "
+    f'pretrained={model_name},tensor_parallel_size=1,dtype=bfloat16,'
+    "gpu_memory_utilization=0.5 --tasks arc_challenge_swh --batch_size 1"
+)
+
+subprocess.run(command, shell=True)
+```
