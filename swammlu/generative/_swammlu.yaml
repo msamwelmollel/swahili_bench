@@ -1,0 +1,33 @@
+group: swammlu_generative
+group_alias: swammlu (generative)
+task:
+  - group: stem
+    task:
+      - swammlu_stem_generative
+    aggregate_metric_list:
+      - metric: acc
+        weight_by_size: True
+  - group: other
+    task:
+      - swammlu_other_generative
+    aggregate_metric_list:
+      - metric: acc
+        weight_by_size: True
+  - group: social sciences
+    task:
+      - swammlu_social_sciences_generative
+    aggregate_metric_list:
+      - metric: acc
+        weight_by_size: True
+  - group: humanities
+    task:
+      - swammlu_humanities_generative
+    aggregate_metric_list:
+      - metric: acc
+        weight_by_size: True
+aggregate_metric_list:
+  - aggregation: mean
+    metric: exact_match
+    weight_by_size: True
+metadata:
+  version: 2
