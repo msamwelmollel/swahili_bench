@@ -1,5 +1,5 @@
 task: arc_challenge_swh
-dataset_path: sartifyllc/arc_challenges
+dataset_path: sartifyllc/arc_challenge1
 output_type: multiple_choice
 training_split: train
 validation_split: validation
